@@ -24,9 +24,14 @@ template\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
 template\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 template\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 template\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+template\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 template\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 template\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 template\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+template\main.o: D:\SoftWare\keil\ARM\ARMCC\Bin\..\include\math.h
+template\main.o: ../Core/Inc/MySystemConfig.h
+template\main.o: ../Core/Inc/i2c.h
 template\main.o: ../Core/Inc/tim.h
 template\main.o: ../Core/Inc/gpio.h
-template\main.o: ..\Hardware\Motor\Inc\Driver_Motor.h
+template\main.o: ../BSP/Motor/Inc/Driver_Motor.h
+template\main.o: ../BSP/MPU6050/Inc/Driver_MPU6050.h

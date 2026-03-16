@@ -1,5 +1,5 @@
 template\modul_motor.o: ..\Modul\Motor\Src\Modul_Motor.c
-template\modul_motor.o: ..\Modul\Motor\Inc\Modul_Motor.h
+template\modul_motor.o: ../Modul/Motor/Inc/Modul_Motor.h
 template\modul_motor.o: ../Core/Inc/main.h
 template\modul_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 template\modul_motor.o: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -25,6 +25,9 @@ template\modul_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex
 template\modul_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 template\modul_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 template\modul_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+template\modul_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 template\modul_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 template\modul_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 template\modul_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+template\modul_motor.o: D:\SoftWare\keil\ARM\ARMCC\Bin\..\include\math.h
+template\modul_motor.o: ../Core/Inc/MySystemConfig.h

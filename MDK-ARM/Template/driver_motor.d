@@ -1,5 +1,5 @@
-template\driver_motor.o: ..\Hardware\Motor\Src\Driver_Motor.c
-template\driver_motor.o: ..\Hardware\Motor\Inc\Driver_Motor.h
+template\driver_motor.o: ..\BSP\Motor\Src\Driver_Motor.c
+template\driver_motor.o: ../BSP/Motor/Inc/Driver_Motor.h
 template\driver_motor.o: ../Core/Inc/main.h
 template\driver_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 template\driver_motor.o: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -25,6 +25,9 @@ template\driver_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_e
 template\driver_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 template\driver_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 template\driver_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+template\driver_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 template\driver_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 template\driver_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 template\driver_motor.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+template\driver_motor.o: D:\SoftWare\keil\ARM\ARMCC\Bin\..\include\math.h
+template\driver_motor.o: ../Core/Inc/MySystemConfig.h

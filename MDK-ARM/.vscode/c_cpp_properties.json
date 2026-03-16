@@ -9,14 +9,16 @@
                 "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Include",
                 "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\Drivers\\CMSIS\\Include",
                 "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\Modul\\Motor\\Inc",
-                "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\Hardware\\Motor\\Inc",
+                "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\BSP\\Motor\\Inc",
+                "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\BSP\\MPU6050\\Inc",
                 "D:\\SoftWare\\Keil\\ARM\\ARMCC\\include",
                 "D:\\SoftWare\\Keil\\ARM\\ARMCC\\include\\rw",
                 "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\MDK-ARM",
                 "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\Core\\Src",
                 "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\Drivers\\STM32F1xx_HAL_Driver\\Src",
                 "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\Modul\\Motor\\Src",
-                "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\Hardware\\Motor\\Src"
+                "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\BSP\\MPU6050\\Src",
+                "c:\\Users\\26556\\Desktop\\STM32Keil\\stm32f1\\BalanceTrolley\\Template\\BSP\\Motor\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

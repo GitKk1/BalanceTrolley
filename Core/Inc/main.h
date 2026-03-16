@@ -31,7 +31,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <math.h>
+#include "MySystemConfig.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -61,14 +62,14 @@ void Error_Handler(void);
 #define Motor1PWM_GPIO_Port GPIOA
 #define Motor2PWM_Pin GPIO_PIN_3
 #define Motor2PWM_GPIO_Port GPIOA
-#define Ain1_Pin GPIO_PIN_10
-#define Ain1_GPIO_Port GPIOB
-#define Ain2_Pin GPIO_PIN_11
-#define Ain2_GPIO_Port GPIOB
-#define Bin2_Pin GPIO_PIN_13
-#define Bin2_GPIO_Port GPIOB
-#define Bin1_Pin GPIO_PIN_14
+#define Bin1_Pin GPIO_PIN_13
 #define Bin1_GPIO_Port GPIOB
+#define Bin2_Pin GPIO_PIN_14
+#define Bin2_GPIO_Port GPIOB
+#define Ain1_Pin GPIO_PIN_10
+#define Ain1_GPIO_Port GPIOA
+#define Ain2_Pin GPIO_PIN_11
+#define Ain2_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 
