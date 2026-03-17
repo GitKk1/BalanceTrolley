@@ -47,9 +47,6 @@
 
 /* USER CODE BEGIN PV */
 extern int16_t AX, AY, AZ, GX, GY, GZ; // 定义用于存放各个数据的变量
-#if DEBUG_MODE
-float test_inclination_angle = 0.0; // 定义用于存放倾斜角度的变量
-#endif
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -97,7 +94,6 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   MPU6050_Init(&hi2c1); //�?螺仪初始�?
-
   //  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
   //  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
   //  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 50);
@@ -108,7 +104,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	test_inclination_angle = MPU6050_AngleCalculate(); // 计算倾斜角度
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

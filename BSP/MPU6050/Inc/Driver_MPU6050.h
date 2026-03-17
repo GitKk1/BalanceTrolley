@@ -81,6 +81,6 @@ HAL_StatusTypeDef MPU6050_Init(I2C_HandleTypeDef *hi2c);
 void MPU6050_GetData(int16_t *AccX, int16_t *AccY, int16_t *AccZ,
                      int16_t *GyroX, int16_t *GyroY, int16_t *GyroZ);
 double MPU6050_GetInclinationAngle(void);
-float MPU6050_AngleCalculate(void);
+float MPU6050_AngleCalculate(double initial_angle);
 
 #endif

@@ -100,7 +100,7 @@ void MPU6050_GetData(int16_t *AccX, int16_t *AccY, int16_t *AccZ,
 /**
  * 函    数：MPU6050得到小车倾斜角度
  * 参    数：无
- * 返 回 值：inclination_angle 小车倾斜的角度
+ * 返 回 值：inclination_angle 小车当前的倾斜角度
  */
 double MPU6050_GetInclinationAngle(void)
 {
@@ -110,12 +110,16 @@ double MPU6050_GetInclinationAngle(void)
   return inclination_angle;
 }
 
-float MPU6050_AngleCalculate(void)
+/**
+ * 函    数：MPU6050得到小车倾斜的角度
+ * 参    数：无
+ * 返 回 值：inclination_angle 小车倾斜的角度
+ */
+float MPU6050_AngleCalculate(double temp_last_angle)
 {
-  static double initial_angle = MPU6050_GetInclinationAngle();
-  float inclination_angle = 0;
+  float inclination_angle = 0.0f;
   MPU6050_GetData(&AX, &AY, &AZ, &GX, &GY, &GZ);
   // 角度计算公式：初始角度 + (陀螺仪Z轴数据 / 总刻度) * 量程 * 时间间隔
-  inclination_angle = initial_angle + ((GZ / 32768) * 2000) * 0.001;
+  inclination_angle = temp_last_angle + ((GZ / 32768) * 2000) * 0.001;
   return inclination_angle;
 }
