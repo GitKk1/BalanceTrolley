@@ -46,7 +46,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-extern int16_t AX, AY, AZ, GX, GY, GZ; // 定义用于存放各个数据的变量
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -94,6 +94,8 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   MPU6050_Init(&hi2c1); //�?螺仪初始�?
+	last_angle = MPU6050_GetInclinationAngle();//获取小车的初始倾斜角度
+	HAL_TIM_Base_Start_IT(&htim3); //获得小车的初始角度后再开启定时器去计算后续倾斜的角度
   //  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
   //  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
   //  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 50);

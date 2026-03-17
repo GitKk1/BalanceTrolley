@@ -2,7 +2,7 @@
 #include "i2c.h"
 // 加速度      角速度
 int16_t AX, AY, AZ, GX, GY, GZ; // 定义用于存放各个数据的变量
-
+double last_angle = 0.0;
 /**
  * 函    数：MPU6050初始化函数
  * 参    数：hi2c: I2C外设句柄
@@ -121,5 +121,6 @@ float MPU6050_AngleCalculate(double temp_last_angle)
   MPU6050_GetData(&AX, &AY, &AZ, &GX, &GY, &GZ);
   // 角度计算公式：初始角度 + (陀螺仪Z轴数据 / 总刻度) * 量程 * 时间间隔
   inclination_angle = temp_last_angle + ((GZ / 32768) * 2000) * 0.001;
+	last_angle = inclination_angle;
   return inclination_angle;
 }
