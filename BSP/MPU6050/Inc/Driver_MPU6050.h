@@ -77,13 +77,13 @@
 #define MPU6050_WHO_AM_I        0x75
 
 
-extern double last_angle;
 extern int16_t AX, AY, AZ, GX, GY, GZ; // 定义用于存放各个数据的变量
+extern double inclination_angle = 0.0;
 
 HAL_StatusTypeDef MPU6050_Init(I2C_HandleTypeDef *hi2c);
 void MPU6050_GetData(int16_t *AccX, int16_t *AccY, int16_t *AccZ,
                      int16_t *GyroX, int16_t *GyroY, int16_t *GyroZ);
 double MPU6050_GetInclinationAngle(void);
-float MPU6050_AngleCalculate(double initial_angle);
+void MPU6050_AngleCalculate(double temp_angle);
 
 #endif

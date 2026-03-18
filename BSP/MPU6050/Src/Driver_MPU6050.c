@@ -2,7 +2,7 @@
 #include "i2c.h"
 // 加速度      角速度
 int16_t AX, AY, AZ, GX, GY, GZ; // 定义用于存放各个数据的变量
-double last_angle = 0.0;
+double inclination_angle = 0.0;
 /**
  * 函    数：MPU6050初始化函数
  * 参    数：hi2c: I2C外设句柄
@@ -104,10 +104,10 @@ void MPU6050_GetData(int16_t *AccX, int16_t *AccY, int16_t *AccZ,
  */
 double MPU6050_GetInclinationAngle(void)
 {
-  double inclination_angle = 0.0;
+  double temp_inclination_angle = 0.0;
   MPU6050_GetData(&AX, &AY, &AZ, &GX, &GY, &GZ);
-  inclination_angle = atan2((double)AY, (double)AX) / 3.14159 * 180;
-  return inclination_angle;
+  temp_inclination_angle = atan2((double)AY, (double)AX) / 3.14159 * 180;//计算当前倾角
+  return temp_inclination_angle;
 }
 
 /**
@@ -115,12 +115,9 @@ double MPU6050_GetInclinationAngle(void)
  * 参    数：无
  * 返 回 值：inclination_angle 小车倾斜的角度
  */
-float MPU6050_AngleCalculate(double temp_last_angle)
+void MPU6050_AngleCalculate(double temp_angle)
 {
-  float inclination_angle = 0.0f;
   MPU6050_GetData(&AX, &AY, &AZ, &GX, &GY, &GZ);
   // 角度计算公式：初始角度 + (陀螺仪Z轴数据 / 总刻度) * 量程 * 时间间隔
-  inclination_angle = temp_last_angle + ((GZ / 32768) * 2000) * 0.001;
-	last_angle = inclination_angle;
-  return inclination_angle;
+  inclination_angle = temp_angle + ((GZ / 32768) * 2000) * 0.001;
 }

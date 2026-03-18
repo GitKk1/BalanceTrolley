@@ -16,6 +16,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if (htim->Instance == TIM3)//1ms定时器
     {
-			test_inclination_angle = MPU6050_AngleCalculate(last_angle); // 计算倾斜角度
+			MPU6050_AngleCalculate(inclination_angle); // 计算倾斜角度
     }
 }
