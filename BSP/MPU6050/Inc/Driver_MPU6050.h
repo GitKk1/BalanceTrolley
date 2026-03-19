@@ -78,7 +78,7 @@
 
 
 extern int16_t AX, AY, AZ, GX, GY, GZ; // 定义用于存放各个数据的变量
-extern double inclination_angle = 0.0;
+extern double inclination_angle;
 
 HAL_StatusTypeDef MPU6050_Init(I2C_HandleTypeDef *hi2c);
 void MPU6050_GetData(int16_t *AccX, int16_t *AccY, int16_t *AccZ,

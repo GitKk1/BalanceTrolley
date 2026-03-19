@@ -119,5 +119,5 @@ void MPU6050_AngleCalculate(double temp_angle)
 {
   MPU6050_GetData(&AX, &AY, &AZ, &GX, &GY, &GZ);
   // 角度计算公式：初始角度 + (陀螺仪Z轴数据 / 总刻度) * 量程 * 时间间隔
-  inclination_angle = temp_angle + ((GZ / 32768) * 2000) * 0.001;
+  inclination_angle += (((double)GZ / 32768) * 2000) * 0.1;
 }
