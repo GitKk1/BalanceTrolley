@@ -1,0 +1,6 @@
+--cpu Cortex-M3 -g --apcs=interwork 
+-I.\RTE\_Template
+-ID:\SoftWare\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include
+-ID:\SoftWare\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include
+--pd "__UVISION_VERSION SETA 527" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"
+--list startup_stm32f103xb.lst --xref -o template\startup_stm32f103xb.o --depend template\startup_stm32f103xb.d "startup_stm32f103xb.s"

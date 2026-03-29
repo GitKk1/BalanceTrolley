@@ -1,8 +1,10 @@
 #include "Driver_MPU6050.h"
 #include "i2c.h"
 // 加速度      角速度
-int16_t AX, AY, AZ, GX, GY, GZ; // 定义用于存放各个数据的变量
+int16_t AX, AY, AZ, GX, GY, GZ; //存放陀螺仪和加速度计数据的变量
 double inclination_angle = 0.0;
+static double alpha = 0.98; // 互补滤波系数，范围0~1，越接近1表示陀螺仪数据权重越大，越接近0表示加速度计数据权重越大
+
 /**
  * 函    数：MPU6050初始化函数
  * 参    数：hi2c: I2C外设句柄
@@ -106,7 +108,7 @@ double MPU6050_GetInclinationAngle(void)
 {
   double temp_inclination_angle = 0.0;
   MPU6050_GetData(&AX, &AY, &AZ, &GX, &GY, &GZ);
-  temp_inclination_angle = atan2((double)AY, (double)AX) / 3.14159 * 180;//计算当前倾角
+  temp_inclination_angle = atan2((double)AY, (double)AX) / 3.14159 * 180; // 计算当前倾角
   return temp_inclination_angle;
 }
 
@@ -115,9 +117,17 @@ double MPU6050_GetInclinationAngle(void)
  * 参    数：无
  * 返 回 值：inclination_angle 小车倾斜的角度
  */
-void MPU6050_AngleCalculate(double temp_angle)
+void MPU6050_AngleCalculate(void)
 {
+  double temp_accelerometer_angle = 0.0; // 加速度计角度
+  double temp_gyro_angle = 0.0;          // 陀螺仪角度
+
   MPU6050_GetData(&AX, &AY, &AZ, &GX, &GY, &GZ);
+
+  temp_accelerometer_angle = MPU6050_GetInclinationAngle(); // 加速度计得到的当前的绝对的倾角
   // 角度计算公式：初始角度 + (陀螺仪Z轴数据 / 总刻度) * 量程 * 时间间隔
-  inclination_angle += (((double)GZ / 32768) * 2000) * 0.1;
+  temp_gyro_angle = inclination_angle + (((double)GZ / 32768.0) * 2000.0) * 0.001; // 陀螺仪得到的角度
+
+  // 互补滤波公式        0.98                       0.02
+  inclination_angle = alpha * temp_gyro_angle + (1 - alpha) * temp_accelerometer_angle;
 }
